@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fc">
+    <title>Student Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="Campus home">
+          <span class="brand-mark">C</span>
+          <span>campus<span class="brand-dot">.</span></span>
+        </a>
+        <p class="nav-label">WORKSPACE</p>
+        <a class="nav-item active" href="/">
+          <span class="nav-icon">▦</span> Students
+          <span class="nav-count" id="nav-count">0</span>
+        </a>
+        <div class="sidebar-note">
+          <span class="note-icon">✦</span>
+          <strong>Made for learning</strong>
+          <p>A simple place to keep your student records organized.</p>
+        </div>
+        <div class="sidebar-footer"><span class="status-dot"></span> Student portal</div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <span class="breadcrumb">Workspace <span>/</span> Students</span>
+          <span class="profile"><span class="avatar">A</span><span>Admin</span></span>
+        </header>
+
+        <section class="page-heading">
+          <div>
+            <p class="eyebrow">YOUR CAMPUS DIRECTORY</p>
+            <h1>Students <span class="heading-spark">✳</span></h1>
+            <p class="subtitle">Keep track of everyone, all in one place.</p>
+          </div>
+          <button class="button button-primary" id="add-student-button" type="button">
+            <span>＋</span> Add student
+          </button>
+        </section>
+
+        <section class="stat-card" aria-label="Student summary">
+          <span class="stat-icon">♧</span>
+          <div><span class="stat-label">TOTAL STUDENTS</span><strong id="total-count">—</strong></div>
+          <span class="stat-caption">In your directory</span>
+          <span class="stat-decoration">✳</span>
+        </section>
+
+        <section class="directory">
+          <div class="directory-heading">
+            <div><h2>All students</h2><p>Your student directory at a glance.</p></div>
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="search-input" type="search" placeholder="Search students..." aria-label="Search students">
+              <kbd>/</kbd>
+            </label>
+          </div>
+          <div id="notice" class="notice" role="status" hidden></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>STUDENT</th><th>COURSE</th><th>YEAR</th><th>EMAIL ADDRESS</th><th></th></tr></thead>
+              <tbody id="student-list">
+                <tr><td class="loading-row" colspan="5">Loading students...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="directory-footer"><span id="results-label">Showing 0 students</span><span>Student Management</span></div>
+        </section>
+        <footer class="page-footer">A little more organized, one student at a time. <span>✳</span></footer>
+      </main>
+    </div>
+
+    <dialog id="student-dialog">
+      <form id="student-form">
+        <div class="dialog-heading">
+          <div><p class="eyebrow">STUDENT DETAILS</p><h2 id="dialog-title">Add a student</h2></div>
+          <button class="icon-button" id="close-dialog" type="button" aria-label="Close">×</button>
+        </div>
+        <label>Full name<input name="name" required maxlength="100" placeholder="e.g. Maya Patel"></label>
+        <label>Email address<input name="email" type="email" required placeholder="maya@example.com"></label>
+        <label>Course<input name="course" required maxlength="100" placeholder="e.g. Computer Science"></label>
+        <label>Year of study<input name="year" type="number" required min="1" max="8" step="1" placeholder="1 to 8"></label>
+        <p id="form-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button class="button button-secondary" id="cancel-dialog" type="button">Cancel</button>
+          <button class="button button-primary" type="submit" id="save-button">Save student</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
