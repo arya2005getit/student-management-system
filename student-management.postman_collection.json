@@ -12,7 +12,7 @@
   "item": [
     {
       "name": "Health check",
-      "request": { "method": "GET", "url": "{{baseUrl}}/api/health" },
+      "request": { "method": "GET", "url": "{{baseUrl} }/api/health" },
       "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('API is running', function () { pm.response.to.have.status(200); });"] } }]
     },
     {
