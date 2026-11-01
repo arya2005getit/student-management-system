@@ -7,7 +7,7 @@ A class-project-level student directory built with Node.js, Express, and MongoDB
 - Node.js 18.11 or newer
 - MongoDB running locally, or a MongoDB Atlas connection string
 
-## Run locally
+## Run locally 
 
 1. Open a terminal in this project directory and install packages:
 
@@ -65,4 +65,7 @@ The requests can also be sent individually using `http://localhost:3000` as the 
 
 ## Deployment
 
+**Deployed application URL:** `https://student-management-api-2kau.onrender.com/`
+
 Deploy to a Node.js host such as Render, Railway, or a similar platform. Set `MONGODB_URI` to your hosted MongoDB Atlas connection string and set `NODE_ENV=production` if supported. Configure the build/install step as `npm install` and the start command as `npm start`. The app uses the host-provided `PORT` and serves both the browser interface and API from the same service. In Atlas, allow network access from the deployment host and keep credentials in the host's environment settings.
+
